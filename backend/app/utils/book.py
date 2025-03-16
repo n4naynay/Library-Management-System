@@ -3,10 +3,9 @@ from datetime import datetime
 class Book:
     def __init__(self, title, author, book_id, quantity, category):
         now = datetime.now()
-        self.title = title
-        self.author = author
+        self.title = str(title)
         self.book_id = str(now).split()[0] + "-" + str(now).split(".")[-1]
-        self.quantity = quantity
+        self.quantity =int(quantity)
         self.category = category
         self.status = "Available"  # New Book status: Available/Checked-out
         self.due_date = None
@@ -25,3 +24,10 @@ class Book:
                 print(f"{idx}. {review}")
         else:
             print("No reviews yet for this book.")
+
+
+if __name__ == "__main__":
+    book1 = Book(title="Nene's wisdom", book_id= "24", quantity=5,author = " nene", category= "thriller")
+
+
+    print(book1.title)
